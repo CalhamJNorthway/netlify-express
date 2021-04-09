@@ -9,7 +9,7 @@ const router = express.Router();
 router.get('/', (req, res) => {
   console.log("GET RESULTS")
   res.writeHead(200, { 'Content-Type': 'application/json' });
-  res.write('<h1>Sending Results</h1>');
+  res.sendFile(path.join(__dirname, './similarityResults.json'));
   res.end();
 });
 router.get('/another', (req, res) => res.json({ route: req.originalUrl }));
